@@ -1,9 +1,12 @@
 <div class="pokemon-grid">
-    <div class="box" *ngFor="let pokemon of pokemons">
+    <div class="box" *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 20,currentPage: page, totalItems: totalPokemon }">
         <img [src]="pokemon.sprites.front_default" alt="pokemon">
-        <h3>#{{pokemon.id < 100 ? '00' + pokemon.id : pokemon.id}}</h3>
-        <h3>{{pokemon.name}}</h3>
+        <h3>#{{pokemon.id}}</h3>
+        <!--<h3>#{{pokemon.id < 100 ? '00' + pokemon.id : pokemon.id}}</h3>-->
+        <h3>{{pokemon.name | titlecase}}</h3>
         <!--TODO: GET ALL TYPES-->
-        <h3>{{pokemon.types[0].type.name}}</h3>
+        <h3>{{pokemon.types[0].type.name | titlecase}}</h3>
     </div>
 </div>
+
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons();"></pagination-controls>
