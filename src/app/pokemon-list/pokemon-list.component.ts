@@ -13,14 +13,14 @@ export class PokemonListComponent implements OnInit {
   ngOnInit(): void {
     this.pokemonService.getPokemons().subscribe((response : any) => {
       response.results.forEach(((result: { name: string; }) => {
-
+        console.log(result);
         this.pokemonService.getPokemon(result.name).subscribe((response : any) => {
+          console.log(response);
           this.pokemons.push(response);
-
+          //Sort the pokemons
+          this.pokemons.sort((a,b) => a.id > b.id ? 1:-1);
         })
       }))
     });
-    console.log(this.pokemons);
   }
-
 }

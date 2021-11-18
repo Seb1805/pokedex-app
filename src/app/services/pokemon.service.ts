@@ -8,11 +8,11 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  //Get Pokemon
+  //Get Pokemons
   getPokemons(){
     return this.http.get('https://pokeapi.co/api/v2/pokemon')
   }
-
+  //Get pokemon by name
   getPokemon(name: string){
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
