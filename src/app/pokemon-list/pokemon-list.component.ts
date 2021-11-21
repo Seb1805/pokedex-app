@@ -9,8 +9,8 @@ import { PokemonService } from '../services/pokemon.service';
 export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
   page = 1;
-  pokemonsPerPage = 20;
-  totalPokemon: number | undefined;
+  pokemonsPerPage = 12;
+  totalPokemon: number = 0;
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
@@ -21,9 +21,9 @@ export class PokemonListComponent implements OnInit {
     this.pokemonService.getPokemons(this.pokemonsPerPage, (this.page * this.pokemonsPerPage) - this.pokemonsPerPage).subscribe((response : any) => {
       this.totalPokemon = response.count;
       response.results.forEach(((result: { name: string; }) => {
-        console.log(result);
+        //console.log(result);
         this.pokemonService.getPokemon(result.name).subscribe((response : any) => {
-          console.log(response);
+          //console.log(response);
           this.pokemons.push(response);
           //Sort the pokemons
           this.pokemons.sort((a,b) => a.id > b.id ? 1:-1);

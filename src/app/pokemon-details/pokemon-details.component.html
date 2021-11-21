@@ -1,0 +1,34 @@
+<div *ngIf="pokemon" class="details-box">
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="pokemon">
+    <div class="row">
+        <div class="column">
+            <p></p>
+            <p><span class="bold">Name: </span>{{pokemon.name | titlecase}} #{{pokemon.id}}</p>
+
+            <p><span class="bold">Weight: </span>{{pokemon.weight}} hectograms</p>
+            <p><span class="bold">Height: </span>{{pokemon.height}} decimeter</p>
+            <p><span class="bold">Abilities: </span><span *ngFor="let ability of pokemon.abilities" class="ability">{{ability.ability.name | titlecase}}</span></p>
+        </div>
+        <div class="column">
+            <div class="stat-box">
+                <div *ngFor="let stat of pokemon.stats" class="stat" [style.width]="'{{stat.base_stat}}'">
+                    {{stat.stat.name}}
+                    {{stat.base_stat}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <p>Weakness:</p>
+    <div *ngIf="types">
+        <span *ngFor="let type of types">
+            <p *ngFor="let subtype of type.damage_relations.double_damage_from" class="type {{subtype.name}}">{{subtype.name }}</p>
+        </span>
+    </div>
+
+
+</div>

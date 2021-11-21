@@ -16,4 +16,17 @@ export class PokemonService {
   getPokemon(name: string){
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
+
+    //Get pokemon by name
+    getPokemonById(id: number){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    }
+
+    getSpeciesByPokemonId(id: number){
+      return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    }
+
+    getApi(api: string){
+      return this.http.get(api);
+    }
 }
