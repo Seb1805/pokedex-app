@@ -3,9 +3,7 @@
         <a routerLink="/details/{{pokemon.id}}">
             <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="pokemon">
             <p>#{{pokemon.id}}</p>
-            <!--<h3>#{{pokemon.id < 100 ? '00' + pokemon.id : pokemon.id}}</h3>-->
             <p>{{pokemon.name | titlecase}}</p>
-            <!--TODO: GET ALL TYPES-->
             <p *ngFor="let type of pokemon.types" class="type {{type.type.name}}">{{type.type.name | titlecase}}</p>
         </a>
     </div>
