@@ -20,10 +20,8 @@
                 </div>
                 <div class="statFlex">
                 <div *ngFor="let stat of pokemon.stats" class="stat">
-
                     <div class="colored-stat" [style.width.%]="(stat.base_stat / 255) * 100">
-
-                    {{stat.base_stat}}
+                        {{stat.base_stat}}
                     </div>
                 </div>
             </div>

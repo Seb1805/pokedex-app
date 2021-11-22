@@ -21,7 +21,6 @@ export class PokemonDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemon();
-
     this.getSpecies();
     this.getTypes();
     console.log(this.types);
@@ -52,7 +51,6 @@ export class PokemonDetailsComponent implements OnInit {
         })
       })
     }
-
 }
 
 
