@@ -24,7 +24,8 @@ export class PokemonDetailsComponent implements OnInit {
 
     this.getSpecies();
     this.getTypes();
-    console.log(this.types)
+    console.log(this.types);
+
   }
 
   async getPokemon(): Promise<void> {
@@ -51,6 +52,7 @@ export class PokemonDetailsComponent implements OnInit {
         })
       })
     }
+
 }
 
 

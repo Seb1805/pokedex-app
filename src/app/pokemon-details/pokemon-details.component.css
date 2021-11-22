@@ -33,12 +33,45 @@ span {
 
 }
 
+.stat{
+
+    background-color: #EEE;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.stat-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.stat-box:first-child p{
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 10px;
+
+}
+
+.colored-stat{
+    background-color: lightblue;
+}
+
+.statFlex{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .ability{
         color: #FFF;
         border: 1px solid #44685E;
         background: seagreen;
-        margin-left: 3px;
+        margin-right: 10px;
+        line-height: 1.3;
 }
+
 
 .row {
     display: flex;
